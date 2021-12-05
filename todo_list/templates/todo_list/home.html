@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel = "stylesheet"  type = "text/CSS" href = "{% static 'todo_list/main.css' %}"  >
+<body>
+    <div class="center-column" >
+        <h3 style="text-align: center;"> To-Do List</h3>
+        <form method="POST" action="/">
+            {%csrf_token%}
+            <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    {{form.task_name}}
+                </div>
+                <div class="col-3">
+            <input class="btn btn-info" style="margin-top: 14%;" type="submit" name="Create Task" >
+        </div> 
+            </div>
+        </div>
+        </form>
+        <div class="todo-list">
+            {% for task in tasks %}
+                <div class="item-row d-flex aligns-items-center">
+                   <div class="col-8">
+                    {% if task.status == True %}
+                        <strike>{{task}}</strike>
+                        <p style="font-size: small;color: grey;">Created on: {{task.start_date}}</p>
+                    {% else %}
+                        <span style="display: block;">{{task}}</span>
+                        <p style="font-size: small;color: grey;">Created on: {{task.start_date}}</p>
+                    {%endif %}
+                     </div>
+                    <div class=" col-3 d-flex float-right">
+                        <a class="btn btn-sm btn-info" style="margin-left:3%;margin-top: 15%;height: 50%;" href="{% url 'update' task.id %}">Update</a>
+                         <a class="btn btn-sm btn-danger" style="margin-left:3%;margin-top: 15%;height: 50%;" href="{% url 'delete' task.id %}">Delete</a>
+                    </div>
+                    
+                    
+                </div>
+            {% endfor %}
+        </div>  
+    </div>
+</body>
