@@ -24,5 +24,7 @@ Steps to install and run the application
 
 Now your application will be running on the local server. You will be able to access at 127.0.0.1:8000
 
-Application contains the home page, where we can add the task in the todo list. Tt displays the task name and the created time and date. 
+Description:
+Application contains the home page, where we can add the task in the todo list. It displays the task name and the created time and date. 
 Each task contains the update and delete button. On update page we can change the status of the task and from delete page we can delete the task from our to-do list. 
+
