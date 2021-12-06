@@ -28,3 +28,9 @@ Description:
 Application contains the home page, where we can add the task in the todo list. It displays the task name and the created time and date. 
 Each task contains the update and delete button. On update page we can change the status of the task and from delete page we can delete the task from our to-do list. 
 
+Home Page
+![Home Page](https://github.com/katejasagar/Monsoon_To-do-List/blob/master/todo_list/static/home.PNG)
+Update Page
+![Update Page](https://github.com/katejasagar/Monsoon_To-do-List/blob/master/todo_list/static/update.PNG)
+Delete Page
+![Delete Page](https://github.com/katejasagar/Monsoon_To-do-List/blob/master/todo_list/static/delete.PNG)
